@@ -9,7 +9,7 @@ import TableHead from "@mui/material/TableHead";
 import TablePagination from "@mui/material/TablePagination";
 import TableRow from "@mui/material/TableRow";
 import axios from "axios";
-import Link from '@mui/material/Link';
+import Link from "@mui/material/Link";
 
 const StyledTableRow = styled(TableRow)(({ theme }) => ({
   "&:nth-of-type(odd)": {
@@ -83,17 +83,10 @@ export default function ColumnGroupingTable() {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
-    axios
-      .get("https://jsonplaceholder.typicode.com/todos")
-      .then((response) => {
-        console.log(response);
-        setUsers(response.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    axios.get("https://jsonplaceholder.typicode.com/todos").then((response) => {
+      setUsers(response.data);
+    });
   }, []);
-
 
   return (
     <Paper sx={{ width: "100%" }}>
@@ -118,23 +111,21 @@ export default function ColumnGroupingTable() {
               .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
               .map((user) => {
                 return (
-					
                   <StyledTableRow
                     key={user.id}
                     onDoubleClick={() => console.log(user)}
                   >
-				  <TableCell>{user.id}</TableCell>
-				  <TableCell>{user.userId}</TableCell>
-				  <TableCell>{user.completed}</TableCell>
-				  <TableCell>{user.title}</TableCell>
-				  <TableCell>{user.id}</TableCell>
-				  <TableCell>{user.id}</TableCell>
-				  <TableCell>ttt</TableCell>
-				  <TableCell>{user.id}</TableCell>
-				  <TableCell>{user.id}</TableCell>
-				  <TableCell>{user.id}</TableCell>
+                    <TableCell>{user.id}</TableCell>
+                    <TableCell>{user.userId}</TableCell>
+                    <TableCell>{user.completed}</TableCell>
+                    <TableCell>{user.title}</TableCell>
+                    <TableCell>{user.id}</TableCell>
+                    <TableCell>{user.id}</TableCell>
+                    <TableCell>ttt</TableCell>
+                    <TableCell>{user.id}</TableCell>
+                    <TableCell>{user.id}</TableCell>
+                    <TableCell>{user.id}</TableCell>
                   </StyledTableRow>
-				  
                 );
               })}
           </TableBody>
@@ -152,4 +143,3 @@ export default function ColumnGroupingTable() {
     </Paper>
   );
 }
-

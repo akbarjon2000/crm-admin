@@ -1,21 +1,20 @@
 import React from "react";
 import Navbar from "../../components/navbar/Navbar";
 import Sidebar from "../../components/sidebar/Sidebar";
-import Esim from '../../components/order/Esim'
+import Usim from "../../components/order/Usim";
 
-
-const EsimOrder = () => {
+const UsimOrder = () => {
   return (
     <div className="home">
       <Sidebar />
       <div className="homeContainer">
         <Navbar />
         <div className="main">
-          <Esim />
+          <Usim />
         </div>
       </div>
     </div>
   );
 };
 
-export default EsimOrder;
+export default UsimOrder;

@@ -1,4 +1,5 @@
 import Home from "./pages/home/Home";
+<<<<<<< HEAD
 import Login from "./pages/login/Login";
 import List from "./pages/list/List";
 import Single from "./pages/single/Single";
@@ -12,10 +13,15 @@ import { useContext } from "react";
 import { DarkModeContext } from "./context/darkModeContext";
 import EsimOrder from "./pages/order/EsimOrder";
 import Generic from "./pages/generic/Generic";
-function App() {
-  const { darkMode } = useContext(DarkModeContext);
+=======
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import EsimOrder from "./pages/order/EsimOrder";
+import UsimOrder from "./pages/order/UsimOrder";
 
+>>>>>>> 1ef1d32da3364e0c7cdce1ffd17876164a0d76fe
+function App() {
   return (
+<<<<<<< HEAD
     <div className={darkMode ? "app dark" : "app"}>
 
       <BrowserRouter>
@@ -59,6 +65,15 @@ function App() {
             <Route path="*" element={<h1>404 not found</h1>} />
           </Routes>
         </div>
+=======
+    <div>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />}></Route>
+          <Route exact path="/esim" element={<EsimOrder />} />
+          <Route exact path="/usim" element={<UsimOrder />} />
+        </Routes>
+>>>>>>> 1ef1d32da3364e0c7cdce1ffd17876164a0d76fe
       </BrowserRouter>
     </div>
   );
